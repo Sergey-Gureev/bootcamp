@@ -1,0 +1,29 @@
+h1 {
+    color: red;
+  }
+
+#container {
+  display: inline-block;
+  background-color: gray;
+}
+
+#first {
+  display: inline-block;
+  border: 1px solid black;
+  width : 50px;
+  height: 50px;
+  background-color: green;
+}
+
+#second {
+  display: inline-block;
+  border: 1px solid black;
+  border-color: black;
+  width : 50px;
+  height: 50px;
+  background-color: orange;
+}
+
+.button {
+  background-color: green;
+}

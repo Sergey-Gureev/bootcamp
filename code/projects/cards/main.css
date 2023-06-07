@@ -1,0 +1,45 @@
+.card{
+    border: 1px solid gray;
+    border-radius: 15px;
+    font: bold;
+    padding: 10px 80px;
+    background-color: white;;
+    position: initial;
+    display:inline-block;
+    }
+
+h1{
+    font-size: 15rem;
+    margin: 0px;
+}
+
+.top-left-corner{
+    position: relative;
+    left: -4em;
+    top: -1em;   
+}
+
+.right-bottom-corner{
+    position: relative;
+    right: -180px;
+    bottom: -10px;   
+}
+
+.c1{
+    z-index: 0;
+    position: initial;
+}
+
+.c2{
+    z-index: 1;
+    position:relative;
+    left:-150px;
+    top:130px;
+}
+
+.c3{
+    z-index: 2;
+    position:relative;
+    left:-300px;
+    top:260px;
+}
