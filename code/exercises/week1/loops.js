@@ -22,7 +22,7 @@ for (i in posts){
 }
 console.log(posts)
 
-//   3
+//  Exercise 3
 const posts = [
     {
       id: 1, 
