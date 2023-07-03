@@ -13,25 +13,28 @@ box.onmouseout = function() {
   box.style.fontSize = '1em'
 }
 
-
-
+const playingField = document.getElementById('playing-field')
+const ball = document.getElementById('ball')
+const STEP = 25;
+const ballWidth = parseInt(ball.offsetWidth)
+const fieldWidth = parseInt(playingField.offsetWidth)
 
 const moveRight = function(){
-    var moveRight = parseInt(document.getElementById("ball").style.left) || 0
-    moveRight = moveRight + 5 
-    if (moveRight >= 84) {
-      moveRight = 84;
+    var positionLeft = parseInt(ball.style.left) || 0
+    positionLeft += STEP
+    if (positionLeft >= fieldWidth - ballWidth) {
+      positionLeft = fieldWidth - ballWidth + parseInt(playingField.style.borderWidth);
     }
-    document.getElementById("ball").style.left = (moveRight) + '%'
+    ball.style.left = positionLeft + 'px'
 }
 
 const moveLeft = function(){
-  var moveLeft = parseInt(document.getElementById("ball").style.left) || 0
-  moveLeft -= 5
-  if (moveLeft <= 0) {
-    moveLeft = 0;
+  var positionLeft = parseInt(ball.style.left) || 0
+  positionLeft -= STEP
+  if (positionLeft <= 0) {
+    positionLeft = 0;
   }
-  document.getElementById("ball").style.left = (moveLeft) + '%'
+  ball.style.left = positionLeft + 'px'
 }
 
 const moveDown = function(){

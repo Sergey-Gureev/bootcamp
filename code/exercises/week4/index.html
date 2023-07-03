@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>.box{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin: 10px;
+        display: inline-block;
+      }
+      .box{
+        width: 70px;
+        height: 70px;
+        margin: 10px;
+        background-color: purple;
+        display: inline-block;
+      }
+      .item{
+  width: 100px;
+  margin: 10px;
+  box-shadow: 1px 1px 3px black;
+  border-radius: 3px;
+  display: inline-block;
+  text-align:center;
+  font-weight: bold;
+  user-select: none;
+  cursor:pointer;
+}
+
+[data-instock="false"]{
+  color: gray;
+  font-weight: normal;
+}
+
+#cart{
+  margin: 10px;
+}
+.brown{
+  color: brown
+}
+
+.green{
+  color: green
+}
+
+.orange{
+  color: orange
+}
+
+.yellow{
+  color: yellow
+}
+body{
+    background: #ecf0f1;
+}
+
+#box22{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px black;
+    background-color: black;
+    margin: 0 auto;
+}
+
+#colors{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.picker{
+    padding: 10px;
+    margin: 10px;
+    width: 120px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; /*You'll have to import this from Google Fonts*/box-shadow: 1px 1px 3px black;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class=feedme>Feed me more</div>
+
+
+    <div id="plague">Bad Things.</div>
+
+    <div id="blogs"></div>
+    <button>Post Blog</button>
+    
+    <button>Add Div</button>
+
+    <div id="items">
+        <div class="item" data-instock=true>Shoe</div>
+        <div class="item" data-instock=false>Umbrella</div>
+        <div class="item" data-instock=true>Melon</div>
+    </div>
+        
+    <div id="cart"></div>
+
+
+    <div id="basket"></div>
+
+
+    <div id="box22"></div>
+    <div id="colors">
+        <span data-color="#2980b9">Blue</span>
+        <span data-color=#e74c3c>Red</span>
+        <span data-color=#f1c40f>Yellow</span>
+        <span data-color=#27ae60>Green</span>
+    </div>
+    <!-- <script src="jquery-exercizes.js"></script> -->
+    <script src="hw-exercises-Jquery.js"> </script>
+</body>
+</html>
