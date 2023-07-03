@@ -1,13 +1,15 @@
-function Renderer() {
+const Renderer = function()  {
     const renderPosts = function (posts) {
         $('#posts').empty()
-        // todo add addingposts func
-    }
-    const addPost = function(post) {
-        $('#posts').append(`<div class="post" id="${post.id}"><p class="text"><b>${post.text}</b></p><div class="comments"></div></div>`)
-        for (let com of comments) {
-            $('.post')[-1].find('.comments').append(`<p id="${com.id}">${com.text}</p>`)
+        for (let post of posts) {
+            renderPost(post)
         }
     }
-    return renderPosts
+    const renderPost = function(post) {
+        $('#posts').append(`<div class="post" data-id="${post.id}"><p class="text"><b>${post.text}</b><span class="delete">X</span></p><div class="comments"></div><input class="input-comment"><button class="put-comment">Comment</button></div>`)
+        for (let com of post.comments) {
+            $('.post').last().find('.comments').append(`<div class="comment" data-id="${com.id}"><p>${com.text}<span class="delete-comment">X</span></p></div>`)
+        }
+    }
+    return {renderPosts, renderPost}
 }
