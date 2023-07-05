@@ -1,43 +1,4 @@
 const Tweeter = function() {
-
-    var postIdCounter = 2;
-    
-    var commentIdCounter = 6;
-    
-    const getPosts = function() {return _posts;}
-    
-    const addPost = function(text) { 
-        post = {
-          id: 'p' + (postIdCounter+1),
-          text: text,
-          comments: [],
-        }
-        postIdCounter += 1
-        _posts.push(post) 
-      }
-    
-    const removePost = function(postID) {
-        
-        _posts = _posts.filter(x => x.id !== postID)
-        console.log(_posts)
-    }
-    
-    const addComment = function(postID, textComment) {
-        post = _posts.filter(post => post.id === postID)[0]
-        comment = {
-            id: 'c' + (commentIdCounter + 1),
-            text: textComment
-        }
-        commentIdCounter += 1;
-        post.comments.push(comment)
-    }
-
-    const removeComment = function(postID, commentId) {
-        post = _posts.filter(post => post.id === postID)[0]
-        console.log('model.js:', post.comments)
-        post.comments = post.comments.filter(comment => comment.id !== commentId)
-    }
-
     var _posts = [
         {
             text: "First post!",
@@ -58,18 +19,50 @@ const Tweeter = function() {
             ]
         }
     ]
+
+    var postIdCounter = _posts.length;
+    var counter = 0
+    for (let post of _posts) {
+        counter += post.comments.length
+    }
+    var commentIdCounter = counter;
+    
+    const getPosts = function() {return JSON.parse(JSON.stringify(_posts));} 
+    
+    const addPost = function(text) { 
+        postIdCounter += 1
+        post = {
+          id: 'p' + (postIdCounter),
+          text: text,
+          comments: [],
+        }
+        _posts.push(post) 
+      }
+    
+    const removePost = function(postID) {
+        _posts = _posts.filter(post => post.id !== postID)  
+    }
+    
+    const getPostById = function(postID){
+        post = _posts.filter(post => post.id === postID)[0] 
+        return post
+    }
+
+    const addComment = function(postID, textComment) {
+        post = getPostById(postID)
+        commentIdCounter += 1;
+        comment = {   
+            id: 'c' + (commentIdCounter),
+            text: textComment
+        }
+        post.comments.push(comment)
+    }
+
+    const removeComment = function(postID, commentId) {
+        post = getPostById(postID)
+        post.comments = post.comments.filter(comment => comment.id !== commentId)
+    }
+
     
     return {getPosts, addPost, removePost, addComment, removeComment}
-    // addPost("This is my own post!")
-    // console.log(getPosts())
-    //This should be added to the posts array:
-    //{text: "This is my own post!", id: "p3", comments: []}
-    
-    // removePost("p1")
-    // console.log(getPosts())
-    //There should only be two posts in the post's array:
-    //{text: "Aw man, I wanted to be first", id: "p2", comments: Array(3)}
-    //{text: "This is my own post!", id: "p3", comments: []}
-    
-    
 }
