@@ -20,15 +20,10 @@ $('button').on('click', function() {
 })
 
 $('#post-container').on('click', '.post', function() {
-    // console.log($(this).find('.name'))
 
     let name = $(this).find('.name').text()
     let text = $(this).find('.text').text()
     console.log(name, '&&&',text)
-    // var _posts = _posts.filter(function(post) { return post.name != name && post.text != text; });
     _posts = _posts.filter(post => (post.name != name || post.text != text));
     render()
 })
-
-
-

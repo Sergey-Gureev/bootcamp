@@ -1,0 +1,83 @@
+[{
+    "name": "Mashed Potatoes",
+    "serves": 4,
+    "ingredients": [
+      {
+        "name": "water"
+      },
+      {
+        "name": "potatoes",
+        "count": 2
+      },
+      {
+        "name": "butter",
+        "count": 2,
+        "unit": "tablespoons"
+      },
+      {
+        "name": "salt",
+        "count": 0.5,
+        "unit": "teaspoon"
+      },
+      {
+        "name": "pepper",
+        "count": 0.25,
+        "unit": "teaspoons"
+      },
+      {"name":"garlic powder",
+        "count": 2,
+        "unit": "teaspoons"
+      }
+    ],
+    "directions": [
+      "Add potatoes to a pot and cover with an inch of water.",
+      "Bring the water to a boil over high heat, then reduce to a simmer and cover.",
+      "Simmer for 20 minutes or until potatoes are fork tender.",
+      "Drain water from potatoes, leaving the potatoes in the original pot.",
+      "Add remaining ingredients to the pot with the potatoes.",
+      "Mash potatoes until they reach the desired consistency.",
+      "Serve immediately, or cover and refrigerate."
+    ]
+},
+{"animals": [{
+    "animal": "Cow",
+    "weight_kg": 750,
+    "live-areas": ["Africa", "Europe", "South America", "North America", "Australia"],
+    "endangered": false,
+    "food-chain-lower": ["grass"],
+    "food-chain-higher": ["Human", "Wolf"],
+    "delicious" : 5
+    },
+    {
+        "animal": "Elephant",
+        "weight_kg": 5500,
+        "live-areas": ["Africa", "Australia"],
+        "endangered": true,
+        "food-chain-lower-percentage": {"grass":100},
+        "food-chain-higher": [],
+        "delicious" : 1
+    },
+    {   
+        "animal": "Gray Wolf",
+        "weight_kg": 150,
+        "live-areas": [ "Europe", "North America"],
+        "endangered": true,
+        "food-chain-lower-percentage": {
+            "Human":3, 
+            "Rabbit":30, 
+            "Cow":67},
+        "food-chain-higher": [],
+        "delicious" : 1
+    },
+    {
+        "animal": "Squirrel",
+        "weight_kg": 0.85,
+        "live-areas": [ "Europe", "North America", "Australia"],
+        "endangered": false,
+        "food-chain-lower-percentage": {"Nuts": 100},
+        "food-chain-higher": ["Wolf"],
+        "delicious" : 1
+    }
+]
+}
+]
