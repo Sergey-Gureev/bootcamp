@@ -44,13 +44,22 @@ function generate() {
     let theme = $('#gif').val()
     console.log( theme )
 
-    $.ajax({
-        method: 'GET',
-        url: `//api.giphy.com/v1/gifs/search?q=${theme}&api_key=${API_KEY}&limit=1`,
-        success: function (response) {
-            console.log(response)
-            $('iframe').attr('src', response.data[0].embed_url)
-        }
+    // $.ajax({
+    //     method: 'GET',
+    //     url: `//api.giphy.com/v1/gifs/search?q=${theme}&api_key=${API_KEY}&limit=1`,
+    //     success: function (response) {
+    //         console.log(response)
+    //         $('iframe').attr('src', response.data[0].embed_url)
+    //     }
+    // })
+
+    $.get('https://random-word-api.herokuapp.com/word').then(word => {
+        console.log(word[0])
+        const API_KEY = 'KBJ9heNSXriM7bZ3nAw9prsgujGCvS7F'
+        $.get(`//api.giphy.com/v1/gifs/search?q=${word}&api_key=${API_KEY}&limit=1`).then(response => {
+            let url = response.data[0].embed_url
+            $('iframe').attr('src', url)
+        })
     })
 }
 
