@@ -11,13 +11,14 @@
     align-items: center;
     justify-items: end;
 }
+
 #nav a{
     color: var(--main-color);
     text-decoration: none;    
-    font-size: 150%;
+    font-size: 1.8vw;
 }
-#nav img{
-    width: 100%;
+#nav div a img{
+    max-width: 100%;
     margin: 20px;
 }
 .dropdown {
@@ -78,12 +79,12 @@
     /* letter-spacing: -1px;    */
     margin-letf: 10px;
     line-height: 75%;
-
 }
 .carousel{
     background-color: var(--light-background-color);
     border-radius: 5px;
     margin: 50px;
+    min-width: 400px;
     width:80%;
     height: 60%;
     position: relative;
@@ -99,26 +100,26 @@
     overflow: auto;    
 }
 @keyframes display {
-    0% {
-      transform: translateX(200px);
+    /* 0% {
+      transform: translateX(0px);
       opacity: 0;
-    }
-    10% {
-      transform: translateX(0);
+    } */
+    /* 10% {
+      transform: translateX(00px);
       opacity: 1;
-    }
+    } */
     20% {
       transform: translateX(0);
       opacity: 1;
     }
     30% {
-      transform: translateX(-200px);
+      transform: translateX(-0px);
       opacity: 0;
     }
-    100% {
-      transform: translateX(-200px);
+    /* 100% {
+      transform: translateX(-400px);
       opacity: 0;
-    }
+    } */
 }
 .carousel-item {
     position: absolute;
@@ -126,43 +127,44 @@
     justify-self: center;
     padding:50px;
     opacity: 0;
-    animation: display 10s infinite;
+    animation: display 5s infinite;
+    font-size: 1.5vw;
 }
 .carousel-2-container{
-    margin: 50px;
+    margin: 20px;
     height: 40%;
     position: relative;
 }
 .slide-track{    
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     grid-template-rows: 1fr;
 }
 .carousel-2-item {
+    min-width: 25vw;
     background-color: var(--light-background-color);
     border-radius: 20px;
-    margin-right: 50px;
-    opacity: 0;
+    margin-right: 20px;
     padding:30px;
     height: 80%;
     text-align: center;
-    animation: display 6s infinite;
+    animation: display 5s infinite; 
 }
 .carousel .carousel-item:nth-child(2) {
-    animation-delay: 3s;
+    animation-delay: 0s;
 }
 .carousel .carousel-item:nth-child(3) {
-    animation-delay: 3s;
+    animation-delay: 4s;
 }
 .carousel .carousel-item:nth-child(4) {
-    animation-delay: 6s;
+    animation-delay: 8s;
 }
-.carousel .carousel-item:nth-child(5) {
+/* .carousel .carousel-item:nth-child(5) {
     animation-delay: 6s;
-}
+} */
 
-.carousel .slide-track .carousel-item{
+.carousel .slide-track .carousel-2-item{
     font-size: 1rem;
     width: 20vw;
     height: 20vw;
@@ -181,16 +183,16 @@
     grid-template-columns: repeat(9, 1fr);
 }
 .partners div{
-    width: 100px;
     height: 80px;
-    display: inline-block;
+   
 }
 .partners div img {
-    width: 100px;
+    max-width: 100%;
+    max-height: 100%;
     display: inline-block;
 }
 .partners div img:hover {
-    width: 100px;
+    max-width: 100%;
     display: inline-block;
     background-color: var(--main-color);
     border-radius: 20px;
@@ -250,14 +252,15 @@ button{
     color: white;
     font-size: 1rem;
 }
-
+#talent{
+    width: 100%;
+}
 #talent img{
     margin: 0px 5% ;
     max-width:100%;
 }
 #talent h2{
-    position: sticky;
-    margin: 0 0;
+    
     font-size: 3rem;
     padding-right: 20%;
 }
@@ -265,9 +268,9 @@ button{
     display: inline-block;
     text-align: top;
     padding: 5px;
-    width: 30%;
+    width: 29%;
     height: 40%;
-    margin: 10px;
+    margin: 1%;
     background-color: white;
 }
 #talent div a{
@@ -445,4 +448,52 @@ button{
 #footer img{
     width:50px;
     border-radius: 50%;
+}
+@media (max-width: 758px) {
+    #nav{
+        display: none;        
+    }
+    #nav img{
+        display: grid;        
+    }
+    #banner-area{
+        display: grid;
+        grid-template-columns: 1fr;    
+        grid-template-rows: 1fr 1fr;    
+    }
+    .banner-left{
+        display:block;
+    }
+    .carousel{
+        min-height: 60%;
+    }
+    .carousel-item{
+        font-size: 1em;    
+    }
+    #youtube iframe{
+        width: 100%;
+    }
+    .slide-track{    
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+    }
+    #talent div{
+        width: 100%;
+        font-size: 2rem;
+    }
+    #cascade {
+        display:grid;
+        grid-template-columns: 1fr;
+    }
+    #resources .wrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+        width: 100vw;
+    }
+    #resources{
+        display:grid;
+        width:100%;
+        grid-template-rows: 1fr;    }
+
 }
