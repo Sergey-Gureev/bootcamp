@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "faker": "^5.5.3",
+    "validator": "^13.9.0"
+  },
+  "name": "npm-exercises",
+  "version": "1.0.0",
+  "main": "ex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
