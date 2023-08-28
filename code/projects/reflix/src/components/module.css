@@ -1,0 +1,22 @@
+
+.modal {
+padding: 30px 30px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 4;
+
+background-color: white;
+color: black;
+border-radius: 6px;
+box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+position:fixed;
+
+}
+
+.modal button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+  
